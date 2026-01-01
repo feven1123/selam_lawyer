@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Richer, warmer white for background */
+    --background: 255 255 255; 
+    /* Deep charcoal for text, softer than pure black */
+    --foreground: 30 41 59; 
+    
+    /* Elegant Primary Blue/Slate */
+    --primary: 15 23 42; 
+    --primary-light: 51 65 85;
+
+    /* Gold/Bronze for accents - Premium Legal feel */
+    --secondary: 180 83 9; 
+    --secondary-light: 217 119 6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+  
+  body {
+    @apply bg-white text-slate-800;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-slate-900;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Buttons with smooth gradients and hover states */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded px-8 py-3 text-base font-medium text-white shadow-md transition-all duration-300 bg-slate-900 hover:bg-slate-800 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded px-8 py-3 text-base font-medium text-white shadow-md transition-all duration-300 bg-amber-700 hover:bg-amber-600 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded border-2 border-slate-900 px-8 py-3 text-base font-medium text-slate-900 transition-all duration-300 hover:bg-slate-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2;
+  }
+  
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center rounded border-2 border-white px-8 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-white hover:text-slate-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+  
+  /* Typography Utilities */
+  .heading-serif {
+    @apply font-serif font-bold text-slate-900;
+  }
+  
+  .heading-lg {
+    @apply text-4xl sm:text-5xl md:text-6xl font-bold leading-tight;
+  }
+  
+  .heading {
+    @apply text-3xl sm:text-4xl font-bold mb-4 font-serif;
+  }
+  
+  .subheading {
+    @apply text-lg text-slate-600 max-w-2xl leading-relaxed;
+  }
+  
+  /* Card Styles */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-white border border-slate-100;
+  }
+  
+  .glass-card {
+    @apply bg-white/95 backdrop-blur-md shadow-xl border border-white/20;
+  }
+  
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 sm:py-24;
+  }
+}
